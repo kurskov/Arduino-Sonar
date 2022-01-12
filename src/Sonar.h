@@ -19,30 +19,29 @@
     #include <WProgram.h>
 #endif
 
-#if defined(__AVR__)
-    #include <avr/io.h>
-    #include <avr/interrupt.h>
-#endif
-
 //Default settings
 
 // Units 
 #define UNIT_CM true    // centimeters
 #define UNIT_IN false   // inches
 
+// Sensor parameters
+#define MAX_SENSOR_DISTANCE_CM 500 // in centimeters
+
 class Sonar {
     public:
-        Sonar(int triggerPin, int echoPin = 0, int maxTime = 5000);
-        int getTime();
+        Sonar(uint8_t triggerPin, uint8_t echoPin = 0, long maxTime = 5000);
+        long getTime();
         int getDistance(bool units = UNIT_CM);
-        void setTriggerPin(int triggerPin);
-        void setEchoPin(int echoPin);
-        void setMaxTime(int maxTime);
-        void setMaxDistance(int maxDistance, bool units = UNIT_CM);
+        void setTriggerPin(uint8_t triggerPin);
+        void setEchoPin(uint8_t echoPin);
+        void setMaxTime(long maxTime);
+        void setMaxDistance(int maxDistance = MAX_SENSOR_DISTANCE_CM, bool units = UNIT_CM);
     private:
-        int _triggerPin;
-        int _echoPin;
-        int _maxTime;
+        uint8_t _triggerPin;
+        uint8_t _echoPin;
+        long _maxTime;
+        bool onePin = false;
 };
 
 #endif _H_7F8B8320_60C3_4750_ADDF_B3EB6F16676C
