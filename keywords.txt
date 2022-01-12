@@ -1,0 +1,19 @@
+# SYNTAX COLORING MAP
+
+## Datatypes (KEYWORD1)
+
+Sonar           KEYWORD1
+
+## Methods and function (KEYWORD2)
+
+getTime         KEYWORD2
+getDistance     KEYWORD2
+setTrigerPin    KEYWORD2
+setEchoPin      KEYWORD2
+setMaxTime      KEYWORD2
+setMaxDistance  KEYWORD2
+
+## Constants (LITERAL1)
+
+UNIT_CM         LITERAL1
+UNIT_IN         LITERAL1
