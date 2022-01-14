@@ -14,6 +14,11 @@ Sonar::Sonar(uint8_t triggerPin, uint8_t echoPin , long maxTime) {
     setTriggerPin(triggerPin);
     setEchoPin(echoPin);
     setMaxTime(maxTime);
+
+    pinMode(_triggerPin, OUTPUT);
+    if (!_onePin) {
+        pinMode(_echoPin, INPUT);
+    }
 }
 
 

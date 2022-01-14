@@ -26,11 +26,13 @@
 #define UNIT_IN false   // inches
 
 // Sensor parameters
-#define MAX_SENSOR_DISTANCE_CM 500 // in centimeters
+#define MAX_SENSOR_DISTANCE_CM 400 // in centimeters
+#define MAX_SENSOR_TIME_US 38000 //  in us (for HC-SR04 default is 38 ms)
+#define DELAY_BETWEEN_MEASURMENT 50000 // in us (for HC-SR04 default is 50 ms)
 
 class Sonar {
     public:
-        Sonar(uint8_t triggerPin, uint8_t echoPin = 0, long maxTime = 5000);
+        Sonar(uint8_t triggerPin, uint8_t echoPin = 0, long maxTime = 38000);
         long getTime();
         int getDistance(bool units = UNIT_CM);
         void setTriggerPin(uint8_t triggerPin);
